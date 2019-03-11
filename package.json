@@ -4,6 +4,7 @@
   "description": "Dynamic documentation for GraphQL endpoints",
   "main": "dist/graphql-docs.js",
   "author": "Magnus Hallin <mhallin@fastmail.com>",
+  "contributors": ["Daniel Rearden, Fabian Daugs"],
   "license": "SEE LICENSE IN LICENSE",
   "files": [
     "dist/",
@@ -29,10 +30,10 @@
   "homepage": "https://github.com/mhallin/graphql-docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mhallin/graphql-docs.git"
+    "url": "https://github.com/fdaugs/graphql-docs"
   },
   "bugs": {
-    "url": "https://github.com/mhallin/graphql-docs/issues"
+    "url": "https://github.com/fdaugs/graphql-docs/issues"
   },
   "engines": {
     "node": ">= 4.4.0"
