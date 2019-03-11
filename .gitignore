@@ -2,5 +2,6 @@
 /example/dist
 /example/node_modules
 /lib
+/dist
 .idea
 index.html
