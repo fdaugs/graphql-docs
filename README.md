@@ -1,7 +1,10 @@
-This is a fork of [Magnus Hallin](https://github.com/mhallin)'s awesome 
+This is a fork of [Daniel Rearden](https://github.com/danielrearden)'s fork of [Magnus Hallin](https://github.com/mhallin)'s awesome 
 [GraphQL-Docs](https://github.com/mhallin/graphql-docs).
 
 Here's what's new:
+* Support for Subscriptions
+
+Daniel Reardens Changes:
 * Implement [Fatih Kadir Akın](https://github.com/f)'s fix adding support for Union Type
 * Group types by definition (Object, Input, Interface, etc.)
 * Sort types within each grouping alphabetically
