@@ -15,6 +15,7 @@ export class Schema {
     types: {[TypeId: string]: Type};
     queryTypeId: TypeId;
     mutationTypeId: ?TypeId;
+    subscriptionTypeId: ?TypeId;
 
     constructor(introspectionResult: any) {
         pre: {
@@ -37,6 +38,12 @@ export class Schema {
             this.mutationTypeId = introspectionResult.__schema.mutationType.name;
         } else {
             this.mutationTypeId = null;
+        }
+
+        if (introspectionResult.__schema.subscriptionType) {
+            this.subscriptionTypeId = introspectionResult.__schema.subscriptionType.name;
+        } else {
+            this.subscriptionTypeId = null;
         }
     }
 
@@ -61,6 +68,20 @@ export class Schema {
             return mutationType;
         } else {
             throw new Error('Mutation type must be an ObjectType');
+        }
+    }
+
+    getSubscriptionType(): ?ObjectType {
+        if (!this.subscriptionTypeId) {
+            return null;
+        }
+
+        const subscriptionType = this.types[this.subscriptionTypeId];
+
+        if (subscriptionType instanceof ObjectType) {
+            return subscriptionType;
+        } else {
+            throw new Error('Subscription type must be an ObjectType');
         }
     }
 }

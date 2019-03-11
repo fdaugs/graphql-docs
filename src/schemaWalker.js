@@ -13,9 +13,15 @@ export function getReferencesInSchema(schema: Schema): [TypeId] {
 
     visitQueue.push(schema.getQueryType().name);
 
+
     const mutationType = schema.getMutationType();
     if (mutationType) {
         visitQueue.push(mutationType.name);
+    }
+
+    const subscriptionType = schema.getSubscriptionType();
+    if (subscriptionType) {
+        visitQueue.push(subscriptionType.name);
     }
 
     while (visitQueue.length) {

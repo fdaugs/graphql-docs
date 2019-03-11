@@ -48,7 +48,8 @@ export class SchemaDocsView extends React.Component {
                     titleOverride={this.titleOverrideFor(t)}
                   />);
                 if (t === this.props.schema.getQueryType() ||
-                  t === this.props.schema.getMutationType()) {
+                  t === this.props.schema.getMutationType() ||
+                  t === this.props.schema.getSubscriptionType()) {
                     sections.schema.items.push({name: t.name, component: component});
                     options.push(t.name);
                 } else {
@@ -157,7 +158,9 @@ export class SchemaDocsView extends React.Component {
         if (t === this.props.schema.getMutationType()) {
             return 'Mutations';
         }
-
+        if (t === this.props.schema.getSubscriptionType()) {
+            return 'Subscriptions';
+        }
         return null;
     }
 }
